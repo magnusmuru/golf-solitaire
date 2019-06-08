@@ -17,13 +17,7 @@ class Solitaire:
 
     def __init__(self):
         """
-        Constructor, do the setup here.
-
-        After setup with Solitaire.columns = 7, Solitaire.cards_in_column = 5
-        You should have:
-        self.tableau -> 7 columns of cards with 5 cards in each column
-        self.stock -> 16 cards
-        self.waste -> 1 card
+        Constructor.
         """
         # your code, replace with proper setup
         new_deck = Deck()
@@ -49,8 +43,6 @@ class Solitaire:
 
         The card must be last in the column list and adjacent by rank
         to the topmost card of the waste pile (last in waste list).
-        Example: 8 is adjacent to 7 and 9. Ace is only adjacent to 2.
-        King is only adjacent to Queen.
         """
         last_cards = []
         for i in self.tableau:
@@ -65,7 +57,6 @@ class Solitaire:
         """
         Move a card from the tableau to the waste pile.
 
-        Does not validate the move.
         :param col: index of column
         """
         self.waste.append(self.tableau[col].pop(-1))
@@ -114,8 +105,6 @@ class Solitaire:
         self.tableau -> a list of lists (each list represents a column of cards)
         self.stock -> a list of Card objects that are in the stock
         self.waste_pile -> a list of Card objects that are in the waste pile
-
-        You may modify/write your own print_game.
         """
         print(f" {'    '.join(list('0123456'))}")
         print('-' * 34)
@@ -152,9 +141,6 @@ class Solitaire:
         """
         Play a game of Golf Solitaire.
 
-        Create the game loop here.
-        Use input() for player input.
-        Available commands are described in rules().
         """
         print("Lets play Golf Solitaire! r - rules, d - deal, q - quit")
         print("Enter the column number.\n")
